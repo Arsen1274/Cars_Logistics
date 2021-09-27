@@ -16,7 +16,7 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @GetMapping()
+    @GetMapping("")
     public ResponseEntity getCars(){
         try{
             return ResponseEntity.ok(carService.getCarsService());
@@ -39,7 +39,7 @@ public class CarController {
         }
     }
 
-    @PostMapping
+    @PostMapping("")
     public ResponseEntity postCar(@RequestBody CarEntity newCar){
         try{
             Car addedCar = carService.postCarService(newCar);
@@ -51,7 +51,7 @@ public class CarController {
         }
     }
 
-    @DeleteMapping()
+    @DeleteMapping("")
     public ResponseEntity deleteCar(@RequestParam int id){
         try{
             Car deletedCar = carService.deleteCarService(id);
@@ -63,4 +63,8 @@ public class CarController {
         }
     }
 
+//    @GetMapping("car-at-area")
+//    public getCarAtArea(){
+//
+//    }
 }
